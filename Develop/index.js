@@ -1,13 +1,170 @@
-// TODO: Include packages needed for this application
+// Include packages needed for this application //
 
-// TODO: Create an array of questions for user input
-const questions = [];
+const inquirer = require('inquirer');
+const fs = require('fs');
+const { writeFile } = require('./assets/generateMarkdown.js');
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+// Create an array of questions for user input // 
 
-// TODO: Create a function to initialize app
-function init() {}
+const userPrompt = () => {
+    return inquirer.prompt([
 
-// Function call to initialize app
+        // Question 1 (title name) //
+
+    {
+        type: 'input',
+        name: 'title',
+        message: "enter your project's title",
+        Validate: (titleInput) => {
+            if (titleInput) {
+                return true;
+            } else {
+                console.log('please enter a project title');
+                return false;
+            }
+        }
+    },
+
+        // Question 2 (project description) //
+
+        {
+            type: 'input',
+            name: 'description',
+            message: 'enter a description for your project',
+            Validate: (descInput) => {
+                if (descInput) {
+                    return true;
+                } else {
+                    console.log('please enter a description for your project');
+                    return false;
+                }
+            }
+        },
+
+        // Question 3 (installation steps) //
+
+        {
+            type: 'input',
+            name: 'installation',
+            message: 'enter installation instructions for your project',
+            Validate: (instInput) => {
+                if (instInput) {
+                    return true;
+                } else {
+                    console.log('please enter installation instructions for your project');
+                    return false;
+                }
+            }
+        },
+
+        // Question 4 (how to use) //
+
+        {
+            type: 'input',
+            name: 'usage',
+            message: 'enter usage information for your project',
+            Validate: (usageInput) => {
+                if (usageInput) {
+                    return true;
+                } else {
+                    console.log('please enter usage information for your project');
+                    return false;
+                }
+            }
+        },
+
+        // Question 5 (Contributions) //
+
+        {
+            type: 'input',
+            name: 'contribution',
+            message: 'enter contribution information for your project',
+            Validate: (contInput) => {
+                if (contInput) {
+                    return true;
+                } else {
+                    console.log('please enter contribution information for your project');
+                    return false;
+                }
+            }
+        },
+
+        // Question 6 (testing) //
+
+        {
+            type: 'input',
+            name: 'tests',
+            message: 'Enter your testing information for your project',
+            validate: (testInput) => {
+              if (testInput) {
+                return true;
+              } else {
+                console.log('Please enter testing information for your project');
+                return false;
+              }
+            },
+          },
+
+          // Question 7 (Licenses) //
+
+          {
+            type: 'list',
+            name: 'license',
+            message: 'Choose a software license for this project',
+            choices: ['MIT', 'AGPL-3.0', 'GPL-3.0', 'N/A'],
+            validate: (listInput) => {
+              if (listInput) {
+                return true;
+              } else {
+                console.log('Please select a license for your project');
+                return false;
+              }
+            },
+          },
+
+          // Question 8 (Github Username) //
+
+          {
+            type: 'input',
+            name: 'github',
+            message: 'Enter your GitHub username',
+            validate: (gitInput) => {
+              if (gitInput) {
+                return true;
+              } else {
+                console.log('Please enter your GitHub username');
+                return false;
+              }
+            },
+          },
+
+          // Question 9 (Email address) //
+
+          {
+            type: 'input',
+            name: 'email',
+            message: 'Enter your email address',
+            validate: (emailInput) => {
+              if (emailInput) {
+                return true;
+              } else {
+                console.log('Please enter your email address');
+                return false;
+              }
+            },
+          },
+
+        ]);
+    };
+
+// Create a function to initialize app // 
+
+function init() {
+    userPrompt().then((data) => {
+      writeFile(data);
+    });
+  }
+
+// Function call to initialize app //
+
 init();
