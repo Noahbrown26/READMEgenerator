@@ -14,7 +14,7 @@ const userPrompt = () => {
     {
         type: 'input',
         name: 'title',
-        message: "enter your project's title",
+        message: 'enter a project title',
         Validate: (titleInput) => {
             if (titleInput) {
                 return true;
@@ -30,12 +30,12 @@ const userPrompt = () => {
         {
             type: 'input',
             name: 'description',
-            message: 'enter a description for your project',
+            message: 'enter a description',
             Validate: (descInput) => {
                 if (descInput) {
                     return true;
                 } else {
-                    console.log('please enter a description for your project');
+                    console.log('please enter a description');
                     return false;
                 }
             }
@@ -46,12 +46,12 @@ const userPrompt = () => {
         {
             type: 'input',
             name: 'installation',
-            message: 'enter installation instructions for your project',
+            message: 'enter installation instructions',
             Validate: (instInput) => {
                 if (instInput) {
                     return true;
                 } else {
-                    console.log('please enter installation instructions for your project');
+                    console.log('please enter installation instructions');
                     return false;
                 }
             }
@@ -62,12 +62,12 @@ const userPrompt = () => {
         {
             type: 'input',
             name: 'usage',
-            message: 'enter usage information for your project',
+            message: 'enter usage information',
             Validate: (usageInput) => {
                 if (usageInput) {
                     return true;
                 } else {
-                    console.log('please enter usage information for your project');
+                    console.log('please enter usage information');
                     return false;
                 }
             }
@@ -78,12 +78,12 @@ const userPrompt = () => {
         {
             type: 'input',
             name: 'contribution',
-            message: 'enter contribution information for your project',
+            message: 'enter contribution information',
             Validate: (contInput) => {
                 if (contInput) {
                     return true;
                 } else {
-                    console.log('please enter contribution information for your project');
+                    console.log('please enter contribution information');
                     return false;
                 }
             }
@@ -94,12 +94,12 @@ const userPrompt = () => {
         {
             type: 'input',
             name: 'tests',
-            message: 'Enter your testing information for your project',
+            message: 'enter testing information',
             validate: (testInput) => {
               if (testInput) {
                 return true;
               } else {
-                console.log('Please enter testing information for your project');
+                console.log('please enter testing information');
                 return false;
               }
             },
@@ -110,13 +110,13 @@ const userPrompt = () => {
           {
             type: 'list',
             name: 'license',
-            message: 'Choose a software license for this project',
+            message: 'choose a software license',
             choices: ['MIT', 'AGPL-3.0', 'GPL-3.0', 'N/A'],
             validate: (listInput) => {
               if (listInput) {
                 return true;
               } else {
-                console.log('Please select a license for your project');
+                console.log('please select a license');
                 return false;
               }
             },
@@ -127,7 +127,7 @@ const userPrompt = () => {
           {
             type: 'input',
             name: 'github',
-            message: 'Enter your GitHub username',
+            message: 'enter your GitHub username',
             validate: (gitInput) => {
               if (gitInput) {
                 return true;
@@ -143,7 +143,7 @@ const userPrompt = () => {
           {
             type: 'input',
             name: 'email',
-            message: 'Enter your email address',
+            message: 'enter your email address',
             validate: (emailInput) => {
               if (emailInput) {
                 return true;
